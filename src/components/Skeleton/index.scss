@@ -1,0 +1,24 @@
+.video-card-skeleton {
+  margin-bottom: 12px;
+  .card-box-skeleton {
+    display: flex;
+    .pic-box-skeleton {
+      position: relative;
+      width: 141px;
+      height: 80px;
+      border-radius: 6px;
+      background: var(--loadGray);
+      flex: 0 0 auto;
+      @media screen and (min-width: 1600px) {
+        width: 189px;
+        height: 107px;
+      }
+    }
+    .info-skeleton {
+      margin-left: 10px;
+      flex: 1;
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+}

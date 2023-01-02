@@ -1,0 +1,45 @@
+$icon-hover-color: #00a1d6;
+$icon-color: #61666d;
+.video-icon-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e3e5e7;
+  .icon-action-left {
+    display: flex;
+    align-items: center;
+    .icon-action-item {
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      width: 92px;
+      user-select: none;
+      &:hover {
+        .icon,
+        span {
+          color: $icon-hover-color;
+        }
+      }
+      .active-icon {
+        color: $icon-hover-color;
+        margin-right: 5px;
+      }
+      .icon {
+        color: $icon-color;
+        margin-right: 5px;
+      }
+      span {
+        font-size: 13px;
+        font-weight: 500;
+        color: $icon-color;
+      }
+      .icon,
+      .active-icon,
+      span {
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+    }
+  }
+}

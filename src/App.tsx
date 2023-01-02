@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./apollo";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Search from "./pages/Search";
+import NotFound from "./components/NotFound";
+import Login from "./pages/Login";
+import VideoByCategory from "./pages/Category";
+import Platform from "./pages/Platform";
+import VideoPage from "./pages/Video";
+import Header from "./components/Header/Header";
 function App() {
+  const { pathname } = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      {pathname.includes(
+        "/" || pathname.includes("search") || pathname.includes("profile")
+      ) ||
+      pathname.includes("category") ||
+      pathname.includes("video") ? (
+        <Header />
+      ) : null}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/platform" element={<Platform />} />
+        <Route path="/profile:id" element={<Profile />} />
+        <Route path="/video:id" element={<VideoPage />} />
+        <Route path="/category:slug" element={<VideoByCategory />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </ApolloProvider>
   );
 }
 

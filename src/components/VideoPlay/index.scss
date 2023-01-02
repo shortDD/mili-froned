@@ -1,0 +1,195 @@
+$progress-color: #00a1d6;
+
+.video-player {
+  position: relative;
+  flex: 1;
+  background-color: black;
+  overflow: hidden;
+  &:hover {
+    .video-controller {
+      opacity: 1;
+    }
+  }
+}
+video {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+  content-visibility: visible;
+}
+.video-controller {
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px 0 10px;
+  transition: opacity 0.3s;
+}
+.video-controller-bg-shadow {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 100px;
+  width: 100%;
+  z-index: -1;
+  user-select: none;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==)
+    repeat-x bottom;
+}
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: rgba(84, 83, 83, 0.3);
+  .progress-bar-entity {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+    background-color: $progress-color;
+    // cursor: pointer;
+    user-select: none;
+  }
+}
+.paused-icon {
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+  cursor: pointer;
+}
+.pause-video {
+  margin-left: 10px;
+}
+.icon-controller {
+  width: 25px;
+  height: 25px;
+}
+.video-time {
+  margin-left: 10px;
+}
+.c-item {
+  color: #fff;
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+.c-btn {
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 22;
+  position: relative;
+  padding: 0 10px;
+  &:hover {
+    padding-top: 30px;
+    margin-top: -30px;
+    z-index: 22;
+  }
+}
+.video-controller-right .c-item {
+  position: relative;
+  user-select: none;
+}
+.volume {
+  &:hover {
+    .volume-box {
+      display: block;
+    }
+  }
+}
+.volume-box {
+  position: absolute;
+  opacity: 0.8;
+  background-color: #000;
+  bottom: 41px;
+  width: 32px;
+  left: 50%;
+  margin-left: -16px;
+  height: 100px;
+  display: none;
+  .volume-num {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+  }
+  .volume-progress {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .strip-wrap {
+      width: 3px;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+      .strip {
+        width: 100%;
+        height: 100%;
+        background-color: $progress-color;
+        transform-origin: 0 100%;
+        user-select: none;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+    }
+    .spot {
+      position: absolute;
+      bottom: 0;
+      width: 12px;
+      height: 12px;
+      left: 50%;
+      margin-left: -6px;
+      background-color: $progress-color;
+      border-radius: 50%;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
+.speed {
+  &:hover {
+    .speed-box {
+      display: block;
+    }
+  }
+}
+.speed-box {
+  position: absolute;
+  bottom: 41px;
+  width: 72px;
+  left: 50%;
+  margin-left: -36px;
+  height: 216px;
+  display: none;
+  .speed-item {
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .active {
+    color: $progress-color;
+  }
+}

@@ -1,0 +1,52 @@
+.video-comment-title-wrap {
+  display: flex;
+  align-items: center;
+  .comment-num,
+  .comment-sort {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .comment-num {
+    width: 100px;
+    h3 {
+      margin-right: 10px;
+      font-weight: 600;
+    }
+    span {
+      font-size: 13px;
+      color: gray;
+    }
+  }
+  .comment-sort {
+    font-size: 13px;
+    :first-child {
+      color: gray;
+      cursor: pointer;
+    }
+    div {
+      margin-right: 10px;
+    }
+    :last-child {
+      color: gray;
+      cursor: pointer;
+    }
+  }
+}
+.selected {
+  color: black !important;
+}
+
+.reply-box {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.bottom-reply-box {
+  background-color: #fff;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  border-top: 1px solid #f1f2f3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

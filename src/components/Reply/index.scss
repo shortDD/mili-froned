@@ -1,0 +1,115 @@
+.reply-wrap {
+  overflow: hidden;
+}
+.root-reply-container {
+  position: relative;
+  padding-top: 22px;
+  padding-left: 80px;
+  .root-reply-avatar {
+    position: absolute;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+  }
+  .content-wrap {
+    .username {
+      padding: 5px 0;
+      margin-bottom: 5px;
+    }
+    .root-reply {
+      .playload {
+        font-size: 15px;
+        line-height: 24px;
+        padding: 2px 0;
+        margin-bottom: 5px;
+      }
+      .reply-info {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        line-height: 24px;
+        padding: 2px 0;
+        color: gray;
+        .likes {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .likes-icon {
+            &:hover {
+              color: var(--blue);
+            }
+          }
+          .liked {
+            color: var(--blue);
+          }
+          span {
+            margin-left: 5px;
+          }
+        }
+        .reply-btn {
+          cursor: pointer;
+          &:hover {
+            color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+}
+.sub-reply-container {
+  padding-left: 72px;
+}
+.sub-reply-item {
+  padding: 8px 0 8px 42px;
+  position: relative;
+  .sub-user-info {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 9px;
+    line-height: 24px;
+    vertical-align: baseline;
+    white-space: nowrap;
+    .sub-reply-avatar {
+      position: absolute;
+      left: 8px;
+    }
+  }
+  .reply-content-container {
+    .reply-content {
+      color: var(--text1);
+      overflow: hidden;
+      word-wrap: break-word;
+      word-break: break-word;
+      white-space: pre-wrap;
+      line-height: 24px;
+      vertical-align: baseline;
+      font-size: 15px;
+    }
+  }
+}
+.username,
+.sub-username {
+  color: var(--uname-text);
+  font-size: 13px;
+  cursor: pointer;
+}
+.view-more-btn {
+  cursor: pointer;
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.sub-reply-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.bottom-line {
+  width: 100%;
+  border-bottom: 2px solid #f1f2f3;
+  margin-left: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
